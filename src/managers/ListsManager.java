@@ -1,6 +1,7 @@
 package managers;
 
 import cards.Card;
+import listCredentials.Board;
 import listCredentials.Hand;
 import utils.ArrayList;
 import utils.Interfaces.IImageViewAble;
@@ -11,11 +12,12 @@ public enum ListsManager {
 	INSTANCE;
 
 	public final ArrayList<ListImageViewAbles<IImageViewAble>> lists = new ArrayList<ListImageViewAbles<IImageViewAble>>();
-	public ListImageViewAbles<Card> hand;
+	public ListImageViewAbles<Card> hand, board;
 
 	public void instantiate() {
 
 		this.hand = new ListImageViewAbles<>(Hand.class);
+		this.board = new ListImageViewAbles<>(Board.class);
 
 	}
 

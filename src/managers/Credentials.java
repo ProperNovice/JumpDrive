@@ -7,7 +7,7 @@ public enum Credentials {
 
 	INSTANCE;
 
-	public final String primaryStageTitle = "JavaFX", numbersImageViewColor = "black";
+	public final String primaryStageTitle = "Jump Drive", numbersImageViewColor = "black";
 	public final boolean colliderVisibility = true;
 	public final double gapBetweenBorders = 25, textHeight = 50,
 			selectEventHandlerAbleDimension = 100, animationStep = 4;
@@ -61,10 +61,7 @@ public enum Credentials {
 		// c board
 
 		x = this.gapBetweenBorders;
-		x += this.dCard.x / 2;
 		y = this.gapBetweenBorders;
-		y += this.dCard.y;
-		y += this.dGapBetweenComponents.y / 2;
 		this.cBoard = new Vector2(x, y);
 
 	}

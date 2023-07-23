@@ -2,6 +2,7 @@ package managers;
 
 import cards.Card;
 import cards.ContactSpecialist;
+import cards.TradePact;
 
 public enum InstantiateComponents {
 
@@ -9,7 +10,6 @@ public enum InstantiateComponents {
 
 	private InstantiateComponents() {
 
-		Board.values();
 		addCardsToDeck();
 
 	}
@@ -17,6 +17,7 @@ public enum InstantiateComponents {
 	private void addCardsToDeck() {
 
 		addCardToDeck(ContactSpecialist.class, 3);
+		addCardToDeck(TradePact.class, 5);
 
 	}
 

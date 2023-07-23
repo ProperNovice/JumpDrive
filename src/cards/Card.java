@@ -1,5 +1,6 @@
 package cards;
 
+import managers.Credentials;
 import utils.ImageView;
 import utils.Interfaces.IImageViewAble;
 import utils.Logger;
@@ -22,6 +23,7 @@ public abstract class Card implements IImageViewAble {
 		fileName += this.getClass().getSimpleName();
 		fileName += ".png";
 		new ImageView(fileName, this);
+		getImageView().setDimensions(Credentials.INSTANCE.dCard);
 
 	}
 
@@ -33,8 +35,12 @@ public abstract class Card implements IImageViewAble {
 		this.cardModel.print();
 
 		Logger.INSTANCE.newLine();
-		Logger.INSTANCE.log("/*");
+		Logger.INSTANCE.logNewLine("/*");
 
+	}
+
+	public final CardModel getCardModel() {
+		return this.cardModel;
 	}
 
 }
