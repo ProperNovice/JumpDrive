@@ -9,6 +9,7 @@ public enum InstantiateComponents {
 
 	private InstantiateComponents() {
 
+		Board.values();
 		addCardsToDeck();
 
 	}

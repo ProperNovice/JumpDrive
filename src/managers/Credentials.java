@@ -17,7 +17,7 @@ public enum Credentials {
 
 	private Vector2 dCardOriginal;
 	public Vector2 dCard;
-	public Vector2 cHand;
+	public Vector2 cHand, cBoard;
 
 	private Credentials() {
 
@@ -57,6 +57,15 @@ public enum Credentials {
 		y = this.dFrame.y;
 		y -= this.gapBetweenBorders;
 		this.cHand = new Vector2(x, y);
+
+		// c board
+
+		x = this.gapBetweenBorders;
+		x += this.dCard.x / 2;
+		y = this.gapBetweenBorders;
+		y += this.dCard.y;
+		y += this.dGapBetweenComponents.y / 2;
+		this.cBoard = new Vector2(x, y);
 
 	}
 
