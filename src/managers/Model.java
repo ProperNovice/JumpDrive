@@ -30,4 +30,24 @@ public enum Model {
 
 	}
 
+	public int boardQuantityPlanetWithColorContain(EColor eColor) {
+
+		int quantity = 0;
+
+		for (Card card : ListsManager.INSTANCE.board) {
+
+			CardModel cardModel = card.getCardModel();
+
+			if (!cardModel.isPlanet())
+				continue;
+
+			if (cardModel.isColorPlanet(eColor))
+				quantity++;
+
+		}
+
+		return quantity;
+
+	}
+
 }
