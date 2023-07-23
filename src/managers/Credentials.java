@@ -15,9 +15,9 @@ public enum Credentials {
 	public Vector2 cTextPanel, cImageViewIndicator;
 	public RearrangeTypeEnum rearrangeTypeEnumText = RearrangeTypeEnum.LINEAR;
 
+	private Vector2 dCardOriginal;
 	public Vector2 dCard;
 	public Vector2 cHand;
-	public double cardHeight;
 
 	private Credentials() {
 
@@ -39,14 +39,17 @@ public enum Credentials {
 
 		// d card
 
+		this.dCardOriginal = new Vector2(238, 330);
+
 		double cardRows = 4;
 
-		this.cardHeight = this.dFrame.y;
-		this.cardHeight -= 2 * this.gapBetweenBorders;
-		this.cardHeight -= (cardRows - 1) * this.dGapBetweenComponents.y;
-		this.cardHeight /= cardRows;
+		y = this.dFrame.y;
+		y -= 2 * this.gapBetweenBorders;
+		y -= (cardRows - 1) * this.dGapBetweenComponents.y;
+		y /= cardRows;
+		x = this.dCardOriginal.x * y / this.dCardOriginal.y;
 
-		System.out.println(this.cardHeight);
+		this.dCard = new Vector2(x, y);
 
 		// c hand
 

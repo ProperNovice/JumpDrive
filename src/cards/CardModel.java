@@ -5,15 +5,45 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+import enums.EAbility;
+import utils.ArrayList;
+import utils.Logger;
+
 public class CardModel {
 
 	private boolean isDevelopment = false, isPlanet = false;
-	private int pointsDefault = 0, cardsToDrawDefault = 0;
+	private int pointsDefault = 0, cardsToDrawDefault = 0, cost = 0;
 	private Callable<Integer> pointsExtra = null, cardsToDrawExtra = null;
 	private ExecutorService executorService = Executors.newFixedThreadPool(1);
+	private ArrayList<EAbility> listAbilities = new ArrayList<>();
 
 	public CardModel() {
 
+	}
+
+	public void print() {
+
+		if (this.isDevelopment)
+			Logger.INSTANCE.log("development");
+		if (this.isPlanet)
+			Logger.INSTANCE.log("planet");
+
+		Logger.INSTANCE.log("cost - " + this.cost);
+		Logger.INSTANCE.log("points - " + getPoints());
+		Logger.INSTANCE.log("cards to draw - " + getCardsToDraw());
+
+		if (!this.listAbilities.isEmpty())
+			for (EAbility eAbility : this.listAbilities)
+				Logger.INSTANCE.log(eAbility);
+
+	}
+
+	public void addAbility(EAbility eAbility) {
+		this.listAbilities.addLast(eAbility);
+	}
+
+	public int getCost() {
+		return this.cost;
 	}
 
 	public int getPoints() {
@@ -82,6 +112,14 @@ public class CardModel {
 
 	public void setCardsToDrawExtra(Callable<Integer> cardsToDrawExtra) {
 		this.cardsToDrawExtra = cardsToDrawExtra;
+	}
+
+	public void setCost(int cost) {
+		this.cost = cost;
+	}
+
+	public boolean hasAbility(EAbility eAbility) {
+		return this.listAbilities.contains(eAbility);
 	}
 
 }
