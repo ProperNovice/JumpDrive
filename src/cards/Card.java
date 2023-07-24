@@ -4,6 +4,7 @@ import managers.Credentials;
 import utils.ImageView;
 import utils.Interfaces.IImageViewAble;
 import utils.Logger;
+import utils.ShutDown;
 
 public abstract class Card implements IImageViewAble {
 
@@ -12,6 +13,8 @@ public abstract class Card implements IImageViewAble {
 	public Card() {
 
 		createImageView();
+		createCardModel();
+		check();
 
 		// height 330
 
@@ -42,5 +45,17 @@ public abstract class Card implements IImageViewAble {
 	public final CardModel getCardModel() {
 		return this.cardModel;
 	}
+
+	private void check() {
+
+		if (this.cardModel.cardCredentialsAreValid())
+			return;
+
+		Logger.INSTANCE.logNewLine(this.getClass().getSimpleName());
+		ShutDown.INSTANCE.execute();
+
+	}
+
+	protected abstract void createCardModel();
 
 }

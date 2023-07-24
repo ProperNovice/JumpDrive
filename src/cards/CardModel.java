@@ -24,6 +24,15 @@ public class CardModel {
 
 	}
 
+	public boolean cardCredentialsAreValid() {
+
+		if (this.isDevelopment || this.isPlanet)
+			return true;
+		else
+			return false;
+
+	}
+
 	public void print() {
 
 		if (this.isDevelopment)
@@ -53,7 +62,7 @@ public class CardModel {
 				Logger.INSTANCE.log(eAbility);
 
 	}
-	
+
 	public CardModel setColorPlanet(EColor eColorPlanet) {
 		this.eColorPlanet = eColorPlanet;
 		return this;

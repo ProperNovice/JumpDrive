@@ -3,7 +3,7 @@ package gameStates;
 import java.lang.reflect.InvocationTargetException;
 
 import cards.Card;
-import cards.ConsumerMarkets;
+import cards.ColonyConvoy;
 import cards.ContactSpecialist;
 import gameStatesDefault.GameState;
 
@@ -15,7 +15,7 @@ public class JUnit extends GameState {
 		addCardToBoard(ContactSpecialist.class);
 		addCardToBoard(ContactSpecialist.class);
 		addCardToBoard(ContactSpecialist.class);
-		addCardToHand(ConsumerMarkets.class);
+		addCardToHand(ColonyConvoy.class);
 
 	}
 

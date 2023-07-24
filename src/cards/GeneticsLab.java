@@ -5,9 +5,10 @@ import managers.Model;
 
 public class GeneticsLab extends Card {
 
-	public GeneticsLab() {
+	@Override
+	protected void createCardModel() {
 
-		super.cardModel.setCost(1).setExplore(1).setPointsDefault(1);
+		super.cardModel.setIsDevelopment().setCost(1).setExplore(1).setPointsDefault(1);
 
 		super.cardModel.setCardsToDrawExtra(() -> {
 

@@ -5,9 +5,10 @@ import managers.Model;
 
 public class ConsumerMarkets extends Card {
 
-	public ConsumerMarkets() {
+	@Override
+	protected void createCardModel() {
 
-		super.cardModel.setCost(2);
+		super.cardModel.setIsDevelopment().setCost(2);
 
 		super.cardModel.setPointsExtra(() -> {
 			return Model.INSTANCE.boardQuantityPlanetWithColorContain(EColor.BLUE);

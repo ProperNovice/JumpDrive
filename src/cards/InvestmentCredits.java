@@ -4,9 +4,10 @@ import enums.EAbility;
 
 public class InvestmentCredits extends Card {
 
-	public InvestmentCredits() {
+	@Override
+	protected void createCardModel() {
 
-		super.cardModel.setCost(1).setPointsDefault(1)
+		super.cardModel.setIsDevelopment().setCost(1).setPointsDefault(1)
 				.addAbility(EAbility.MINUS_1_COST_DEVELOPMENTS);
 
 	}
