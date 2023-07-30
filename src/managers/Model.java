@@ -30,7 +30,7 @@ public enum Model {
 
 	}
 
-	public int boardQuantityPlanetWithColorContain(EColor eColor) {
+	public int boardGetQuantityOfPlanetsWithColor(EColor eColor) {
 
 		int quantity = 0;
 

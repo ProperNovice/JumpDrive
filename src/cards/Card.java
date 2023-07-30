@@ -52,6 +52,7 @@ public abstract class Card implements IImageViewAble {
 			return;
 
 		Logger.INSTANCE.logNewLine(this.getClass().getSimpleName());
+		Logger.INSTANCE.logNewLine("cards credentials are not valid");
 		ShutDown.INSTANCE.execute();
 
 	}

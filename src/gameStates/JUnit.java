@@ -5,6 +5,10 @@ import java.lang.reflect.InvocationTargetException;
 import cards.Card;
 import cards.ColonyConvoy;
 import cards.ContactSpecialist;
+import cards.GalacticAdvertisers;
+import cards.MiningConglomerate;
+import cards.SpaceMarines;
+import cards.WarPropaganda;
 import gameStatesDefault.GameState;
 
 public class JUnit extends GameState {
@@ -16,6 +20,10 @@ public class JUnit extends GameState {
 		addCardToBoard(ContactSpecialist.class);
 		addCardToBoard(ContactSpecialist.class);
 		addCardToHand(ColonyConvoy.class);
+		addCardToHand(SpaceMarines.class);
+		addCardToHand(WarPropaganda.class);
+		addCardToHand(GalacticAdvertisers.class);
+		addCardToHand(MiningConglomerate.class);
 
 	}
 

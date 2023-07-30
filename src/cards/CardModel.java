@@ -13,7 +13,7 @@ import utils.Logger;
 public class CardModel {
 
 	private boolean isDevelopment = false, isPlanet = false, isMilitary = false;
-	private int pointsDefault = 0, cardsToDrawDefault = 0, cost = 0, explore = 0, military = 0,
+	private int pointsDefault = 0, cardsToDrawDefault = 0, cost = 0, explore = 0, militaryPlusValue = 0,
 			chromosome = 0;
 	private Callable<Integer> pointsExtra = null, cardsToDrawExtra = null;
 	private EColor eColorPlanet = null;
@@ -45,8 +45,8 @@ public class CardModel {
 		if (this.explore > 0)
 			Logger.INSTANCE.log("explore - " + this.explore);
 
-		if (this.military > 0)
-			Logger.INSTANCE.log("military - " + this.military);
+		if (this.militaryPlusValue > 0)
+			Logger.INSTANCE.log("military plus value - " + this.militaryPlusValue);
 
 		if (this.chromosome > 0)
 			Logger.INSTANCE.log("chromosome - " + this.chromosome);
@@ -68,7 +68,7 @@ public class CardModel {
 		return this;
 	}
 
-	public CardModel setMilitary() {
+	public CardModel setMilitaryPlanet() {
 		this.isMilitary = true;
 		return this;
 	}
@@ -118,8 +118,8 @@ public class CardModel {
 		return this;
 	}
 
-	public CardModel setMilitary(int military) {
-		this.military = military;
+	public CardModel setMilitaryPlusValue(int military) {
+		this.militaryPlusValue = military;
 		return this;
 	}
 
@@ -148,8 +148,8 @@ public class CardModel {
 		return this.explore;
 	}
 
-	public int getMilitary() {
-		return this.military;
+	public int getMilitaryPlusValue() {
+		return this.militaryPlusValue;
 	}
 
 	public int getChromosome() {
@@ -192,7 +192,7 @@ public class CardModel {
 
 	}
 
-	public boolean isMilitary() {
+	public boolean isMilitaryPlanet() {
 		return this.isMilitary;
 	}
 

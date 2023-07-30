@@ -16,7 +16,7 @@ public class Image {
 		} catch (Exception e) {
 
 			Logger.INSTANCE.log("could not create image");
-			Logger.INSTANCE.logNewLine("filePath -> " + this.filePath);
+			Logger.INSTANCE.logNewLine(this.filePath);
 			ShutDown.INSTANCE.execute();
 
 		}
